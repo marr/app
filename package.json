@@ -4,11 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify -t [ babelify  --presets [ es2015 react ] ] src/index.js -o bundle.js",
+    "build": "browserify -x react -x react-dom -x moment src/index.js -o bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserify": {
     "transform": [
+      [ "babelify",
+        {
+          "ignore": "/node_modules/",
+          "presets": [
+            "es2015",
+            "react"
+          ]
+        }
+      ],
       "browserify-shim"
     ]
   },

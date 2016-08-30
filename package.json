@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "browserify src/index.js -o bundle.js",
+    "build": "browserify -t [ babelify  --presets [ es2015 react ] ] src/index.js -o bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browserify": {
@@ -20,6 +20,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "moment": "^2.14.1",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
   "devDependencies": {
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
@@ -29,10 +34,5 @@
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "vinyl-source-stream": "^1.1.0"
-  },
-  "peerDependecies": {
-    "moment": "^2.14.1",
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1"
   }
 }

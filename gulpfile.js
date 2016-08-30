@@ -10,7 +10,7 @@ gulp.task('default', build)
 
 function build() {
   const bundler = browserify({
-    debug: true,
+    debug: false,
     entries: ['./src/index.js'],
     paths: ['src']
   }).external([
